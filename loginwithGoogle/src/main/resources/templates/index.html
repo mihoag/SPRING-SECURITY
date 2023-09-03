@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>WELCOME</title>
+</head>
+<body>
+<h1>WELCOME</h1>
+
+<div>
+	<form th:action="@{/dologout}" method="post" th:hidden = "true" name = "logoutform">
+        <input type="submit" value="Logout" />
+    </form>
+     <a href="javascript:document.logoutform.submit()">Log out</a>
+		</div>
+
+</body>
+</html>

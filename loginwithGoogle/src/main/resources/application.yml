@@ -1,0 +1,25 @@
+debug: true
+server:
+  port: 8080
+  servlet:
+    context-path: /
+     
+spring:
+  datasource:
+    password: leminhhoang
+    url: jdbc:mysql://Localhost:3306/salesdb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  security:
+    oauth2:
+      client:
+        registration:
+         google:
+          clientId: 326217566106-m45dv35olkf9a9ea0bffochfb9evqmnd.apps.googleusercontent.com
+          clientSecret: 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
+          scope:
+           - email
+           - profile     

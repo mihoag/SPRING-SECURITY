@@ -1,0 +1,25 @@
+debug: true
+server:
+  port: 8080
+  servlet:
+    context-path: /
+     
+spring:
+  datasource:
+    password: leminhhoang
+    url: jdbc:mysql://Localhost:3306/salesdb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  security:
+    oauth2:
+      client:
+        registration:
+         github:
+          clientId: 08e680aa603baab8667a
+          clientSecret: 07492216b5fa734aae07a57be0bd31d21f3277a5
+          scope:
+           - user:email
+           - read:user     
