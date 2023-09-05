@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>HELLO WORLD !!!</h1>
+<div>
+<form th:action="@{/logout}" method="post" th:hidden = "true" name = "logoutform">
+        <input type="submit" value="Logout" />
+    </form>
+     <a href="javascript:document.logoutform.submit()">Log out</a>
+		</div>
+</body>
+</html>
