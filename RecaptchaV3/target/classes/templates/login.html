@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login - Spring Security Example</title>
+<style type="text/css">
+    body div {
+        text-align: center;
+    }
+    label, input[type=text], input[type=password] {
+        display: inline-block;
+        width: 150px;
+        margin: 5px;
+    }
+    input[type=submit] {
+        width: 60px;
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<body>
+<div>
+    <div>
+        <h2>Spring Security Login Form</h2>
+    </div>
+    <div th:if="${param.error}">
+        <h3>Invalid username and password.</h3>
+    </div>
+    <div th:if="${param.logout}">
+        <h3>You have been logged out.</h3>
+    </div>
+    <div>
+    <form th:action="@{/dologin}" method="post" id="loginForm">
+        <div><label>Username: </label> <input type="text" name="u" /></div>
+        <div><label>Password: </label><input type="text" name="p" /></div>
+        <!--  <div><input type="checkbox" name="remember-me" >Remember me</div> -->
+       <!-- <div><input type="submit" value="Login" /></div>  -->
+         <button class = "g-recaptcha btn btn-primary"
+         data-sitekey = "6LdUhC0oAAAAAATO1Wjv_GKdFZnk30Xm5CNErBMC"
+         data-callback = "onSubmit"
+         data-action = "submit">Login</button>
+    </form>
+    </div>
+    
+</div>   
+<script type="text/javascript">
+  function onSubmit(token)
+  {
+	  document.getElementById("loginForm").submit();
+	  }
+
+</script>
+</body>
+</html>
